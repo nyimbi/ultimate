@@ -59,3 +59,29 @@ django-compressor==2.2
 {% endif %}
 
 # Your custom requirements go here
+pip-tools
+sh
+flake8
+pytest
+ipython
+ipdb
+Django
+psycopg2
+raven
+WebTest
+django-webtest
+model-mommy
+django-debug-toolbar
+django-model-utils
+django-redis
+hiredis
+django-bootstrap3
+django-vanilla-views
+django-extensions
+django-clear-cache
+uwsgi
+django-configurations
+whitenoise
+# brotlipy
+invoke
+factory_boy   # for Fixtures

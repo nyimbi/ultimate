@@ -35,6 +35,22 @@ except NotImplementedError:
     using_sysrandom = False
 
 
+try:
+    from click.termui import secho
+except ImportError:
+    warn = print
+else:
+    def warn(text):
+        for line in text.splitlines():
+            secho(line, fg="white", bg="red", bold=True)
+
+
+def replace_contents(filename, what, replacement):
+    with open(filename) as fh:
+        changelog = fh.read()
+    with open(filename, 'w') as fh:
+        fh.write(changelog.replace(what, replacement))
+
 def get_random_string(length=50):
     """
     Returns a securely generated random string.

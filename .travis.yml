@@ -7,13 +7,103 @@ services:
 
 language: python
 
-python: 3.5
+python: 3.6
 
 env:
     - TOX_ENV=py34
     - TOX_ENV=py35
+    - TOX_ENV=py36
+    - ENV=matrix-nose-argparse-py3doc-flake8
+    - ENV=matrix-nose-click-py3doc-flake8
+    - ENV=matrix-nose-nocli-py3doc-flake8
+    - ENV=matrix-nose-nocli-rtd-flake8
+    - ENV=matrix-nose-plain-py3doc-flake8
+    - ENV=matrix-pytest-argparse-py3doc-flake8
+    - ENV=matrix-pytest-cext-nocli-py3doc-flake8
+    - ENV=matrix-pytest-cext-nocli-rtd-flake8
+    - ENV=matrix-pytest-cext-optional-nocli-py3doc-flake8
+    - ENV=matrix-pytest-cext-optional-nocli-rtd-flake8
+    - ENV=matrix-pytest-cffi-nocli-py3doc-flake8
+    - ENV=matrix-pytest-cffi-nocli-rtd-flake8
+    - ENV=matrix-pytest-click-py3doc-flake8
+    - ENV=matrix-pytest-cython-nocli-py3doc-flake8
+    - ENV=matrix-pytest-cython-nocli-rtd-flake8
+    - ENV=matrix-pytest-nocli-py3doc-flake8
+    - ENV=matrix-pytest-nocli-rtd-flake8
+    - ENV=matrix-pytest-plain-py3doc-flake8
+    - ENV=matrix-separatecover-nose-argparse-py3doc-flake8
+    - ENV=matrix-separatecover-nose-click-py3doc-flake8
+    - ENV=matrix-separatecover-nose-nocli-py3doc-flake8
+    - ENV=matrix-separatecover-nose-nocli-rtd-flake8
+    - ENV=matrix-separatecover-nose-plain-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-argparse-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-cext-nocli-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-cext-nocli-rtd-flake8
+    - ENV=matrix-separatecover-pytest-cext-optional-nocli-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-cext-optional-nocli-rtd-flake8
+    - ENV=matrix-separatecover-pytest-cffi-nocli-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-cffi-nocli-rtd-flake8
+    - ENV=matrix-separatecover-pytest-click-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-cython-nocli-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-cython-nocli-rtd-flake8
+    - ENV=matrix-separatecover-pytest-nocli-py3doc-flake8
+    - ENV=matrix-separatecover-pytest-nocli-rtd-flake8
+    - ENV=matrix-separatecover-pytest-plain-py3doc-flake8
+    - ENV=plain-nose-argparse-py3doc-flake8
+    - ENV=plain-nose-click-py3doc-flake8
+    - ENV=plain-nose-nocli-py3doc-flake8
+    - ENV=plain-nose-nocli-rtd-flake8
+    - ENV=plain-nose-plain-py3doc-flake8
+    - ENV=plain-pytest-argparse-py3doc-flake8
+    - ENV=plain-pytest-argparse-py3doc-pylama
+    - ENV=plain-pytest-cext-nocli-py3doc-flake8
+    - ENV=plain-pytest-cext-nocli-py3doc-pylama
+    - ENV=plain-pytest-cext-nocli-rtd-flake8
+    - ENV=plain-pytest-cext-nocli-rtd-pylama
+    - ENV=plain-pytest-cext-optional-nocli-py3doc-flake8
+    - ENV=plain-pytest-cext-optional-nocli-py3doc-pylama
+    - ENV=plain-pytest-cext-optional-nocli-rtd-flake8
+    - ENV=plain-pytest-cext-optional-nocli-rtd-pylama
+    - ENV=plain-pytest-cffi-nocli-py3doc-flake8
+    - ENV=plain-pytest-cffi-nocli-py3doc-pylama
+    - ENV=plain-pytest-cffi-nocli-rtd-flake8
+    - ENV=plain-pytest-cffi-nocli-rtd-pylama
+    - ENV=plain-pytest-click-py3doc-flake8
+    - ENV=plain-pytest-click-py3doc-pylama
+    - ENV=plain-pytest-cython-nocli-py3doc-flake8
+    - ENV=plain-pytest-cython-nocli-py3doc-pylama
+    - ENV=plain-pytest-cython-nocli-rtd-flake8
+    - ENV=plain-pytest-cython-nocli-rtd-pylama
+    - ENV=plain-pytest-nocli-py3doc-flake8
+    - ENV=plain-pytest-nocli-py3doc-pylama
+    - ENV=plain-pytest-nocli-rtd-flake8
+    - ENV=plain-pytest-nocli-rtd-pylama
+    - ENV=plain-pytest-plain-py3doc-flake8
+    - ENV=plain-pytest-plain-py3doc-pylama
+    - ENV=plain-separatecover-nose-argparse-py3doc-flake8
+    - ENV=plain-separatecover-nose-click-py3doc-flake8
+    - ENV=plain-separatecover-nose-nocli-py3doc-flake8
+    - ENV=plain-separatecover-nose-nocli-rtd-flake8
+    - ENV=plain-separatecover-nose-plain-py3doc-flake8
+    - ENV=plain-separatecover-pytest-argparse-py3doc-flake8
+    - ENV=plain-separatecover-pytest-cext-nocli-py3doc-flake8
+    - ENV=plain-separatecover-pytest-cext-nocli-rtd-flake8
+    - ENV=plain-separatecover-pytest-cext-optional-nocli-py3doc-flake8
+    - ENV=plain-separatecover-pytest-cext-optional-nocli-rtd-flake8
+    - ENV=plain-separatecover-pytest-cffi-nocli-py3doc-flake8
+    - ENV=plain-separatecover-pytest-cffi-nocli-rtd-flake8
+    - ENV=plain-separatecover-pytest-click-py3doc-flake8
+    - ENV=plain-separatecover-pytest-cython-nocli-py3doc-flake8
+    - ENV=plain-separatecover-pytest-cython-nocli-rtd-flake8
+    - ENV=plain-separatecover-pytest-nocli-py3doc-flake8
+    - ENV=plain-separatecover-pytest-nocli-rtd-flake8
+    - ENV=plain-separatecover-pytest-plain-py3doc-flake8
 
 before_install:
+  - python --version
+  - virtualenv --version
+  - pip --version
+  - uname -a
   - sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-precise main" > /etc/apt/sources.list.d/docker.list'
   - sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
   - sudo apt-get update
@@ -27,8 +117,11 @@ before_install:
   - docker -v
 
 script:
-    - tox -e $TOX_ENV
-    - sh tests/test_docker.sh
+  - git config --global user.email "nyimbi@gmail.com"
+  - git config --global user.name "Nyimbi Odero"
+  - ci/test.sh $ENV
+  - tox -e $TOX_ENV
+  - sh tests/test_docker.sh
 
 install:
     - pip install tox
